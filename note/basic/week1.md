@@ -145,7 +145,7 @@ INSTALLED_APPS = [
 - 장고 명명법 : 소문자 / 공백은 없어야함 / 자주 입력해야 하므로 짧게
 - 명명 규칙 참고 : https://valuefactory.tistory.com/509
 
-![python nomenclature](./images/python nomenclature.png)
+![python nomenclature](./images/python_nomenclature.png)
 
 ## views.py
 
