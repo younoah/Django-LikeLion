@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이 사이트는 글자를 카운트해줍니다.</h1>
+    <a href="{%url 'about'%}">About</a>
+    <form action="{% url 'result' %}">
+        <textarea cols="40" rows="10" name= "fulltext"></textarea>
+        <br>
+        <input type="submit" value="Count">
+    </form>
+</body>
+</html>
