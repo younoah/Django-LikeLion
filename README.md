@@ -1,5 +1,19 @@
 # Django-LikeLion
 
+### 찾아보기
+
+- 장고 프로젝트, 폴더, 파일 명명법
+
+- 맥, 파이썬 업데이트, 파이썬 인터프리터 선택
+
+- 커맨드창 python3명령어를 python 으로 바꿔놨었음
+
+- 맥 vscode, 파이썬 세팅, 장고세팅(models.modle 자동완성), 왜 가상환경에 장고가 미리 설치되어있다 뜨는지
+
+  ![vscode_error](./images/vscode_error.png)
+
+  ![vscode_eroor2](/Users/uno/Desktop/Dev/study/Django-LikeLion/images/vscode_eroor2.png)
+
 ### 치트시트
 
 - 장고프로젝트를 담은 디렉터리 생성후 해당 디렉터리를 vscode로 실행
