@@ -1,5 +1,10 @@
 # Django-LikeLion
 
+### 내가한 vscode 세팅
+
+- beautify : cmd + shift + L
+  - prettier 가 더 섬세한것같아서 차근차근 알아보기
+
 ### 찾아보기
 
 - 장고 프로젝트, 폴더, 파일 명명법
