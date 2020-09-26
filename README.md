@@ -1,8 +1,21 @@
 # Django-LikeLion
 
-### 내가한 vscode 세팅
+### 내가한 파이썬/터미널(zsh)/vscode 세팅
+
+- zsh 설정
+
+  > code ~/.zshrc 에서
+  >
+  > alias python=/usr/local/bin/python3
+  >
+  > alias pip=/usr/local/bin/pip3
+  >
+  > 추가함- python3 에서 python 이라고 처도 python3가 실행되도록 설정
+  >
+  > (이 밖에 zsh관련 설정은 ~/.zshrc 여기서 확인할수 있다.)
 
 - beautify : cmd + shift + L
+  
   - prettier 가 더 섬세한것같아서 차근차근 알아보기
 
 ### 찾아보기
@@ -11,13 +24,27 @@
 
 - 맥, 파이썬 업데이트, 파이썬 인터프리터 선택
 
-- 커맨드창 python3명령어를 python 으로 바꿔놨었음
+- python select interpreter 설정 개념 
+
+- 파이썬 가상환경, 버전 개념(중요)
 
 - 맥 vscode, 파이썬 세팅, 장고세팅(models.modle 자동완성), 왜 가상환경에 장고가 미리 설치되어있다 뜨는지
 
   ![vscode_error](./images/vscode_error.png)
 
-  ![vscode_eroor2](/Users/uno/Desktop/Dev/study/Django-LikeLion/images/vscode_eroor2.png)
+  ![vscode_eroor2](./images/vscode_eroor2.png)
+  
+  ![pylintererror](./images/pylintererror.png)
+  
+  ![pylinterror2](./images/pylinterror2.png)
+  
+  ![pylinterror3](./images/pylinterror3.png)
+  
+  ![pylinsterror4](./images/pylinsterror4.png)
+  
+  ![pylinterror5](./images/pylinterror5.png)
+
+> 파이썬 인터프리터가 어떤것으로 잡혀있나에 따라 파이썬을 아예 인식을 못하는 경우도 있다.
 
 ### 치트시트
 
