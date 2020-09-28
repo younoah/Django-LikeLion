@@ -1,6 +1,11 @@
-# Django-LikeLion
+## 목차
 
-### 내가한 파이썬/터미널(zsh)/vscode 세팅
+- [나의 장고/파이썬 설정](# 내가한 파이썬/터미널(zsh)/vscode 세팅)
+- [찾아보기](# 찾아보기)
+- [문제해결 완료](# 문제해결 완료)
+- [장고 치트시트](# 치트시트)
+
+## 내가한 파이썬/터미널(zsh)/vscode 세팅
 
 - zsh 설정
 
@@ -27,7 +32,9 @@
   
   - prettier 가 더 섬세한것같아서 차근차근 알아보기
 
-### 찾아보기
+
+
+## 찾아보기
 
 - 장고 프로젝트, 폴더, 파일 명명법
 
@@ -41,7 +48,7 @@
 
   
 
-<details>
+## 문제해결 완료
 
 파이썬 가상환경, 버전 개념(중요)
 
@@ -51,31 +58,29 @@
 >
 > https://wikidocs.net/16402
 
-![python_venv](./images/python_venv.png)
+![python_venv](file:///Users/uno/Desktop/Dev/study/Django-LikeLion/images/python_venv.png?lastModify=1601309952)
 
 맥 vscode, 파이썬 세팅, 장고세팅(models.modle 자동완성), 왜 가상환경에 장고가 미리 설치되어있다 뜨는지
 
-![vscode_error](./images/vscode_error.png)
+![vscode_error](file:///Users/uno/Desktop/Dev/study/Django-LikeLion/images/vscode_error.png?lastModify=1601309952)
 
-![vscode_eroor2](./images/vscode_eroor2.png)
+![vscode_eroor2](file:///Users/uno/Desktop/Dev/study/Django-LikeLion/images/vscode_eroor2.png?lastModify=1601309952)
 
-![pylintererror](./images/pylintererror.png)
+![pylintererror](file:///Users/uno/Desktop/Dev/study/Django-LikeLion/images/pylintererror.png?lastModify=1601309952)
 
-![pylinterror2](./images/pylinterror2.png)
+![pylinterror2](file:///Users/uno/Desktop/Dev/study/Django-LikeLion/images/pylinterror2.png?lastModify=1601309952)
 
-![pylinterror3](./images/pylinterror3.png)
+![pylinterror3](file:///Users/uno/Desktop/Dev/study/Django-LikeLion/images/pylinterror3.png?lastModify=1601309952)
 
-![pylinsterror4](./images/pylinsterror4.png)
+![pylinsterror4](file:///Users/uno/Desktop/Dev/study/Django-LikeLion/images/pylinsterror4.png?lastModify=1601309952)
 
-![pylinterror5](./images/pylinterror5.png)
+![pylinterror5](file:///Users/uno/Desktop/Dev/study/Django-LikeLion/images/pylinterror5.png?lastModify=1601309952)
 
 > 파이썬 인터프리터가 어떤것으로 잡혀있나에 따라 파이썬을 아예 인식을 못하는 경우도 있다.
 
-</details>
 
-<summary>장고 가상환경 세팅 문제 해결</summary>
 
-### 치트시트
+## 치트시트
 
 - 장고프로젝트를 담은 디렉터리 생성후 해당 디렉터리를 vscode로 실행
 - 가상환경 설정
