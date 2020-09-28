@@ -13,6 +13,15 @@
   > 추가함- python3 에서 python 이라고 처도 python3가 실행되도록 설정
   >
   > (이 밖에 zsh관련 설정은 ~/.zshrc 여기서 확인할수 있다.)
+  >
+  > ---
+  >
+  > 위 설정은 하니깐 가상환경에 들어가서 python 명령어를 치면 가상환경 경로의 python이 아닌 
+  >
+  > /usr/local/bin/python3이 실행되버린다.
+  > alias가 되어있어서 저절로 경로를 잡아 버리는거 같다...
+  >
+  > 따라서 일단 위에 alias 설정은 꺼두었다.
 
 - beautify : cmd + shift + L
   
@@ -22,37 +31,49 @@
 
 - 장고 프로젝트, 폴더, 파일 명명법
 
+- 장고/파이썬 refactor, 변수/폴더명/파일명 변경시 알아서 세팅다시되도록 하는게 있을까?
+
+- 남의 작업한 장고프로젝트를 갖고와서 해당 장고프로젝트에 맞는 가상환경 생성방법
+
 - 맥, 파이썬 업데이트, 파이썬 인터프리터 선택
 
 - python select interpreter 설정 개념 
 
-- 파이썬 가상환경, 버전 개념(중요)
-
-  > https://dojang.io/mod/page/view.php?id=2470
-  >
-  > https://seolin.tistory.com/96
-  >
-  > https://wikidocs.net/16402
-
-  ![python_venv](./images/python_venv.png)
-
-- 맥 vscode, 파이썬 세팅, 장고세팅(models.modle 자동완성), 왜 가상환경에 장고가 미리 설치되어있다 뜨는지
-
-  ![vscode_error](./images/vscode_error.png)
-
-  ![vscode_eroor2](./images/vscode_eroor2.png)
   
-  ![pylintererror](./images/pylintererror.png)
-  
-  ![pylinterror2](./images/pylinterror2.png)
-  
-  ![pylinterror3](./images/pylinterror3.png)
-  
-  ![pylinsterror4](./images/pylinsterror4.png)
-  
-  ![pylinterror5](./images/pylinterror5.png)
+
+<details>
+
+파이썬 가상환경, 버전 개념(중요)
+
+> https://dojang.io/mod/page/view.php?id=2470
+>
+> https://seolin.tistory.com/96
+>
+> https://wikidocs.net/16402
+
+![python_venv](./images/python_venv.png)
+
+맥 vscode, 파이썬 세팅, 장고세팅(models.modle 자동완성), 왜 가상환경에 장고가 미리 설치되어있다 뜨는지
+
+![vscode_error](./images/vscode_error.png)
+
+![vscode_eroor2](./images/vscode_eroor2.png)
+
+![pylintererror](./images/pylintererror.png)
+
+![pylinterror2](./images/pylinterror2.png)
+
+![pylinterror3](./images/pylinterror3.png)
+
+![pylinsterror4](./images/pylinsterror4.png)
+
+![pylinterror5](./images/pylinterror5.png)
 
 > 파이썬 인터프리터가 어떤것으로 잡혀있나에 따라 파이썬을 아예 인식을 못하는 경우도 있다.
+
+</details>
+
+<summary>장고 가상환경 세팅 문제 해결</summary>
 
 ### 치트시트
 
