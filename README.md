@@ -28,6 +28,14 @@
 
 - 파이썬 가상환경, 버전 개념(중요)
 
+  > https://dojang.io/mod/page/view.php?id=2470
+  >
+  > https://seolin.tistory.com/96
+  >
+  > https://wikidocs.net/16402
+
+  ![python_venv](./images/python_venv.png)
+
 - 맥 vscode, 파이썬 세팅, 장고세팅(models.modle 자동완성), 왜 가상환경에 장고가 미리 설치되어있다 뜨는지
 
   ![vscode_error](./images/vscode_error.png)
