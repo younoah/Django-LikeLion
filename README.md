@@ -4,6 +4,8 @@
 - [찾아보기](#찾아보기)
 - [문제해결 완료](#문제해결-완료)
 - [장고 치트시트](#치트시트)
+- [파이썬 코드스타일 PEP8](#파이썬-코드-스타일-(PEP8))
+- [패키지 관리](#패키지 목록 버전 관리 (reqirements.txt))
 
 ## 내가 설정한 파이썬/터미널(zsh)/vscode 세팅
 
@@ -27,26 +29,56 @@
   > alias가 되어있어서 저절로 경로를 잡아 버리는거 같다...
   >
   > 따라서 일단 위에 alias 설정은 꺼두었다.
+  >
+  > ---
+  >
+  > python : (/usr/bin/python)
+  >
+  > python3 : (/usr/local/bin/python3)
+  >
+  > pip : (pip not found) - 원래 설치 안되어있는 것같다.
+  >
+  > pip3 : (/usr/bin/pip3)
 
-- beautify : cmd + shift + L
+- vscode beautify : cmd + shift + L
   
   - prettier 가 더 섬세한것같아서 차근차근 알아보기
+  
+- 파이썬/pip 업데이트
+
+```
+// pip3 
+$ pip3 -version
+$ pip3 install --upgrade pip
+
+// python
+$ brew upgrade // brew의 모든 시스템 업그레이드, 파이썬도 업그레이드 된다.
+$ brew upgrade python3 // python3 만 업그레이드
+```
 
 
 
 ## 찾아보기
 
-- 장고 프로젝트, 폴더, 파일 명명법
-
 - 장고/파이썬 refactor, 변수/폴더명/파일명 변경시 알아서 세팅다시되도록 하는게 있을까?
 
-- 남의 작업한 장고프로젝트를 갖고와서 해당 장고프로젝트에 맞는 가상환경 생성방법
+- python/python3/pip/pip3 설치경로(path) 설정을 어떻게 해야할까?
 
-- 맥, 파이썬 업데이트, 파이썬 인터프리터 선택
+  > https://dailyheumsi.tistory.com/214
 
-- python select interpreter 설정 개념 
+  - usr/bin vs usr/local/bin 두 디렉터리의 차이와 어디다 설치하는게 맞을까?
 
-  
+    > https://wookiist.tistory.com/10
+    >
+    > https://kldp.org/node/42376
+
+  - 환경변수를 어떻게 하냐에 따라 패키지/라이브러리 들이 어디로 저장이 될까?
+
+- 파이썬의 가장 추천되는 가상환경이 멀까? 여러종류의 가상환경의 차이가 멀까?
+
+  > 참고 : https://medium.com/@equus3144/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%98%EA%B3%A0-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%97%88%EC%9D%84%EA%B9%8C-8173992f28e2
+  >
+  > 참고 : https://iissgnoheci.tistory.com/6
 
 ## 문제해결 완료
 
@@ -217,3 +249,49 @@ from .models import Blog
 admin.site.register(Blog)
 ```
 
+
+
+## 파이썬 코드 스타일 (PEP8)
+
+PEP8의 내용을 몇가지 소개하면…
+
+- 들여쓰기는 공백 4개를 사용한다.
+- 한 줄의 최대 길이는 79자를 넘지 않는다.
+- 클래스와 함수 선언 전에 2개의 빈 줄을 넣어야 한다. (클래스의 메서드인 경우는 1개)
+- 1개의 요소만 갖는 튜플(tuple)은 반드시 마지막 콤마를 붙인다. (ex. `bar = ("foo",)`)
+- 모듈과 패키지 이름은 최대한 짧게 하되 소문자만 사용한다.
+- 클래스 이름은 카멜케이스 규칙을 따른다.
+- 함수와 변수명은 소문자와 언더스코어만을 사용한 조합을 사용한다.
+- 예외(Exception) 클래스 이름은 항상 “Error”를 접미사로 갖는다.
+- 인스턴스 메서드의 첫번째 인자 이름은 `self`, 클래스 메서드의 첫번째 인자는 `cls`를 사용한다.
+- (이하 생략)
+
+> 출처 : https://jonnung.dev/python/2019/11/23/ordinary-python-development-environment/
+>
+> 참고 : https://wayhome25.github.io/python/2017/05/04/pep8/
+>
+> 참고 : (PEP8 번역한 블로그) https://kongdols-room.tistory.com/18
+>
+> 참고 : (PEP8)  https://www.python.org/dev/peps/pep-0008/
+
+
+
+## 패키지 목록 버전 관리 (reqirements.txt)
+
+- 가상환경이나 현재 python에 pip로 설치된 패키지 목록에 대한 정보를 requierments.txt로 만들기
+
+  ```
+  $ pip freeze > requirements.txt
+  ```
+
+  ![requirements](./images/requirements.png)
+
+- requierments.txt의 패키지들을 모두 설치하기 위해서는 아래 명령어를 사용한다.
+
+  ```
+  $ pip install -r requierments.txt
+  ```
+
+  > 이 명령어로 설치가 안되는 패키지들이 있을수 있다.
+  >
+  > 다른 패키지에 대한 의존성이라든지 여러가지 요소로 설치가 안되는 패키지는 수동으로 설치해준다.
