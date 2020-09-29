@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<h1>게시글 작성</h1>
+<form action="{% url 'create_blog' %}">
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"> 제목 : <input type="text" name="title"></h5>
+            <br>
+            <h5>내용</h5>
+            <p class="card-text"> <textarea name="body" cols="117" rows="20"></textarea> </p>
+        </div>
+        <!-- <input class="btn btn-dark" type="submit" value="제출하기"> -->
+        <button type="submit" class="btn btn-outline-primary">작성 완료</button>
+        <br>
+        <button type="button" class="btn btn-outline-danger">작성 취소</button>
+    </div>
+</form>
+{% endblock contents %}

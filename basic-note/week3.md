@@ -8,9 +8,24 @@
 
 ### model
 
-models.py에서 class로 데이터 모델을 정의한다.
+- models.py에서 class로 데이터 모델을 정의한다.
 
-모델을 정의하고 나면 아래와 같이 명령어로 데이터베이스에게 데이터 모델을 등록해야한다.
+```python
+# models.py
+from django.db import models
+
+class Blog(models.Model):
+    def __str__(self):
+        return self.title
+    
+    title = models.CharField(max_length = 200)
+    created_date = models.DateTimeField(auto_now_add = True)
+    body = models.TextField()
+```
+
+
+
+- 모델을 정의하고 나면 아래와 같이 명령어로 데이터베이스에게 데이터 모델을 등록해야한다.
 
 ```python
 python manage.py makemigrations

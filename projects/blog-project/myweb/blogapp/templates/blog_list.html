@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<h1>게시글 목록</h1>
+
+{% for blog in blogs.all %}
+<a href="{% url 'blog_detail' blog.id %}">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"> {{blog.title}} </h5>
+      <h6 class="card-subtitle mb-2 text-muted"> {{blog.created_date}} </h6>
+      <p class="card-text"> 본문 요약 : {{blog.summary}}...... </p>
+    </div>
+  </div>
+</a>
+<br>
+{% endfor %}
+
+{% endblock %}

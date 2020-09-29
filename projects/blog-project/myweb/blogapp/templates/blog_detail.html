@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<h1>본문 내용</h1>
+<div class="card">
+    {% comment %} <script>
+        // 경고창
+        function removeCheck() {
+            if (confirm("정말 삭제하시겠습니까??") == true) {} else {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script> {% endcomment %}
+
+    <div class="card-body">
+        <h5 class="card-title"> {{blog.title}} </h5>
+        <h6 class="card-subtitle mb-2 text-muted"> 생성날짜 : {{blog.created_date}} / 수정날짜 : {{blog.updated_date}} </h6>
+        <br>
+        <p class="card-text"> 본문 요약 : {{blog.body}} </p>
+    </div>
+    <button type="button" class="btn btn-outline-primary"><a href="{% url 'blog_modify' blog.id%}">수정하기</a></button>
+    <button type="button" class="btn btn-outline-danger" style="cursor:pointer"><a href="{% url 'delete_blog' blog.id%}">삭제하기</a></button>
+</div>
+{% endblock contents %}

@@ -90,6 +90,10 @@
 
 - views.py
 
+  > 주의
+  >
+  > req.GET['title'] 에서 (소괄호)가 아닌 중괄호[] 이다.
+
 ```python
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone

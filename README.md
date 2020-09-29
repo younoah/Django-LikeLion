@@ -2,10 +2,10 @@
 
 - [나의 설정](#내가-설정한-파이썬/터미널(zsh)/vscode-세팅)
 - [찾아보기](#찾아보기)
-- [문제해결 완료](#문제해결-완료)
 - [장고 치트시트](#치트시트)
 - [파이썬 코드스타일 PEP8](#파이썬-코드-스타일-(PEP8))
 - [패키지 관리](#패키지 목록 버전 관리 (reqirements.txt))
+- [문제해결 완료](#문제해결-완료)
 
 ## 내가 설정한 파이썬/터미널(zsh)/vscode 세팅
 
@@ -56,9 +56,17 @@ $ brew upgrade // brew의 모든 시스템 업그레이드, 파이썬도 업그�
 $ brew upgrade python3 // python3 만 업그레이드
 ```
 
+- 장고에서 html 자동완성 안될때
 
+  > https://nine007.tistory.com/63
+  >
+  > https://sw-ko.tistory.com/60
+
+  
 
 ## 찾아보기
+
+- from import 경로
 
 - 장고/파이썬 refactor, 변수/폴더명/파일명 변경시 알아서 세팅다시되도록 하는게 있을까?
 
@@ -79,36 +87,6 @@ $ brew upgrade python3 // python3 만 업그레이드
   > 참고 : https://medium.com/@equus3144/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%98%EA%B3%A0-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%97%88%EC%9D%84%EA%B9%8C-8173992f28e2
   >
   > 참고 : https://iissgnoheci.tistory.com/6
-
-## 문제해결 완료
-
-파이썬 가상환경, 버전 개념(중요)
-
-> https://dojang.io/mod/page/view.php?id=2470
->
-> https://seolin.tistory.com/96
->
-> https://wikidocs.net/16402
-
-![python_venv](./images/python_venv.png?lastModify=1601309952)
-
-맥 vscode, 파이썬 세팅, 장고세팅(models.modle 자동완성), 왜 가상환경에 장고가 미리 설치되어있다 뜨는지
-
-![vscode_error](./images/vscode_error.png?lastModify=1601309952)
-
-![vscode_eroor2](./images/vscode_eroor2.png?lastModify=1601309952)
-
-![pylintererror](./images/pylintererror.png?lastModify=1601309952)
-
-![pylinterror2](./images/pylinterror2.png?lastModify=1601309952)
-
-![pylinterror3](./images/pylinterror3.png?lastModify=1601309952)
-
-![pylinsterror4](./images/pylinsterror4.png?lastModify=1601309952)
-
-![pylinterror5](./images/pylinterror5.png?lastModify=1601309952)
-
-> 파이썬 인터프리터가 어떤것으로 잡혀있나에 따라 파이썬을 아예 인식을 못하는 경우도 있다.
 
 
 
@@ -276,9 +254,9 @@ PEP8의 내용을 몇가지 소개하면…
 
 
 
-## 패키지 목록 버전 관리 (reqirements.txt)
+## 패키지 목록 버전 관리 (requirements.txt)
 
-- 가상환경이나 현재 python에 pip로 설치된 패키지 목록에 대한 정보를 requierments.txt로 만들기
+- 가상환경이나 현재 python에 pip로 설치된 패키지 목록에 대한 정보를 requirements.txt로 만들기
 
   ```
   $ pip freeze > requirements.txt
@@ -286,12 +264,58 @@ PEP8의 내용을 몇가지 소개하면…
 
   ![requirements](./images/requirements.png)
 
-- requierments.txt의 패키지들을 모두 설치하기 위해서는 아래 명령어를 사용한다.
+- requirements.txt의 패키지들을 모두 설치하기 위해서는 아래 명령어를 사용한다.
 
   ```
-  $ pip install -r requierments.txt
+  $ pip install -r requirements.txt
   ```
 
   > 이 명령어로 설치가 안되는 패키지들이 있을수 있다.
   >
   > 다른 패키지에 대한 의존성이라든지 여러가지 요소로 설치가 안되는 패키지는 수동으로 설치해준다.
+
+- 설치되어 있는 pip 패키지 확인
+
+  ```
+  $ pip freeze
+  ```
+
+  
+
+## 문제해결 완료
+
+파이썬 가상환경, 버전 개념(중요)
+
+> https://dojang.io/mod/page/view.php?id=2470
+>
+> https://seolin.tistory.com/96
+>
+> https://wikidocs.net/16402
+
+![python_venv](./images/python_venv.png?lastModify=1601309952)
+
+맥 vscode, 파이썬 세팅, 장고세팅(models.modle 자동완성), 왜 가상환경에 장고가 미리 설치되어있다 뜨는지
+
+![vscode_error](./images/vscode_error.png?lastModify=1601309952)
+
+![vscode_eroor2](./images/vscode_eroor2.png?lastModify=1601309952)
+
+![pylintererror](./images/pylintererror.png?lastModify=1601309952)
+
+![pylinterror2](./images/pylinterror2.png?lastModify=1601309952)
+
+![pylinterror3](./images/pylinterror3.png?lastModify=1601309952)
+
+![pylinsterror4](./images/pylinsterror4.png?lastModify=1601309952)
+
+![pylinterror5](./images/pylinterror5.png?lastModify=1601309952)
+
+> 파이썬 인터프리터가 어떤것으로 잡혀있나에 따라 파이썬을 아예 인식을 못하는 경우도 있다.
+
+
+
+## 가상 환경 폴더를 다른 곳으로 이동시켰다면?
+
+- 가상 환경을 사용할 때 주의할 점이 있는데, 가상 환경을 만들고 나서 폴더(디렉터리)를 다른 곳으로 이동시키면 활성화가 안 됩니다. 
+- 왜냐하면 가상 환경을 활성화하는 activate.bat, Activate.ps1, activate 파일 안에 현재 가상 환경 폴더의 경로가 내장되어 있기 때문입니다. 
+- 만약 가상 환경 폴더를 다른 곳으로 이동시켰다면 activate.bat, Activate.ps1, activate 파일 안의 VIRTUAL_ENV 부분을 이동시킨 폴더 경로로 수정해줍니다.
