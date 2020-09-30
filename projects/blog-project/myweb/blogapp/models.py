@@ -5,7 +5,8 @@ class Blog(models.Model):
         return self.title
 
     title = models.CharField(max_length = 200)
-    created_date = models.DateTimeField(auto_now_add = True)
+    #created_date = models.DateTimeField(auto_now_add = True)
+    created_date = models.DateTimeField('date published')
     updated_date = models.DateTimeField(auto_now = True)
     body = models.TextField()
 

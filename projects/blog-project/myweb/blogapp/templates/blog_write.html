@@ -11,10 +11,21 @@
             <h5>내용</h5>
             <p class="card-text"> <textarea name="body" cols="117" rows="20"></textarea> </p>
         </div>
-        <!-- <input class="btn btn-dark" type="submit" value="제출하기"> -->
-        <button type="submit" class="btn btn-outline-primary">작성 완료</button>
+            <input class="btn btn-dark" type="submit" value="제출하기">
+            <button type="submit" class="btn btn-outline-primary">작성 완료</button>
         <br>
         <button type="button" class="btn btn-outline-danger">작성 취소</button>
     </div>
 </form>
+
+<!-- <div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <input class="btn btn-dark" type="submit" value="작성완료">
+    </form>
+</div> -->
 {% endblock contents %}
