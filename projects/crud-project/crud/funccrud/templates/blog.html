@@ -1,0 +1,13 @@
+<h1>Func CRUD</h1>
+<br>
+<a href="{% url 'create' %}">글쓰기</a>
+<br><br>
+
+{% for blog in blogs %}
+<h2>{{blog.title}}</h2>
+<p>{{blog.pub_date}}</p>
+<p>{{blog.body}}</p>
+<a href="{% url 'update' blog.id%}">수정</a>
+<a href="{% url 'delete' blog.id%}">삭제</a>
+<hr>
+{% endfor %}

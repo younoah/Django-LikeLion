@@ -33,6 +33,7 @@ from .models import Blog
 class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
+        # fileds = "__all__" # 모델에 있는 모든 프로퍼티 갖고오기
         fields = ['title', 'body']
 ```
 

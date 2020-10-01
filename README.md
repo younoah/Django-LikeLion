@@ -1,11 +1,12 @@
 ## 목차
 
 - [나의 설정](#내가-설정한-파이썬/터미널(zsh)/vscode-세팅)
-- [찾아보기](#찾아보기)
 - [장고 치트시트](#치트시트)
+- [찾아보기](#찾아보기)
 - [파이썬 코드스타일 PEP8](#파이썬-코드-스타일-(PEP8))
-- [패키지 관리](#패키지 목록 버전 관리 (reqirements.txt))
+- [패키지 관리](#패키지-목록-버전-관리-(reqirements.txt))
 - [문제해결 완료](#문제해결-완료)
+- 팁
 
 ## 내가 설정한 파이썬/터미널(zsh)/vscode 세팅
 
@@ -62,31 +63,6 @@ $ brew upgrade python3 // python3 만 업그레이드
   >
   > https://sw-ko.tistory.com/60
 
-  
-
-## 찾아보기
-
-- from import 경로
-
-- 장고/파이썬 refactor, 변수/폴더명/파일명 변경시 알아서 세팅다시되도록 하는게 있을까?
-
-- python/python3/pip/pip3 설치경로(path) 설정을 어떻게 해야할까?
-
-  > https://dailyheumsi.tistory.com/214
-
-  - usr/bin vs usr/local/bin 두 디렉터리의 차이와 어디다 설치하는게 맞을까?
-
-    > https://wookiist.tistory.com/10
-    >
-    > https://kldp.org/node/42376
-
-  - 환경변수를 어떻게 하냐에 따라 패키지/라이브러리 들이 어디로 저장이 될까?
-
-- 파이썬의 가장 추천되는 가상환경이 멀까? 여러종류의 가상환경의 차이가 멀까?
-
-  > 참고 : https://medium.com/@equus3144/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%98%EA%B3%A0-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%97%88%EC%9D%84%EA%B9%8C-8173992f28e2
-  >
-  > 참고 : https://iissgnoheci.tistory.com/6
 
 
 
@@ -96,18 +72,24 @@ $ brew upgrade python3 // python3 만 업그레이드
 - 가상환경 설정
 
 ```python
+#### venv ####
 python -m venv <가상환경이름>
+
+#### virtualenv ####
+pip install virtualenv
+
+virtualenv <가상환경이름>
 ```
 
 - 가상환경 실행
 
-```
-// in mac
+```python
+# in mac
 source <가상환경이름>/bin/activate
-// in window
+# in window
 source <가상환경이름>/scripts/activate
 
-// 가상환경 종료
+# 가상환경 종료
 deactivate
 ```
 
@@ -227,6 +209,67 @@ from .models import Blog
 admin.site.register(Blog)
 ```
 
+- urls.py 세팅
+
+  1. 앱폴더안에 urls.py를 생성하고 기존 url패턴들을 갖고온다.
+
+  ```python
+  ## 프젝트 폴더
+  from django.urls import path
+  # import blogapp.views 라고 작성해도된다.
+  from . import views
+  
+  urlpatterns = [
+      path('<int:blog_id>', views.detail, name = 'detail'),
+      path('new', views.new, name = 'new'),
+      path('create', views.create, name = 'create'),
+  ]
+  ## 동일 폴더에 urls.py이기 때문에
+  ## 기존의 blogapp.views.메서드 에서 views.메서드로 간결하게 정리가된다.
+  ```
+
+  2. 프로젝트 폴더의 urls.py 에서 **include**를 임포트하고 아래와같이 세팅한다.
+
+  ```python
+  ## 앱폴더
+  from django.contrib import admin
+  from django.urls import path, include ## include 임포트하기!!!!
+  import blogapp.views
+  import blogapp.urls
+  
+  urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('', blogapp.views.home, name = 'home'),
+      path('blog/', include('blogapp.urls')), ## include를 사용하여 blog/~~~로 간결하게 통일할수 있다.
+  ]  
+  ```
+
+- base.html 세팅
+
+## 찾아보기
+
+- from import 경로
+
+- 장고/파이썬 refactor, 변수/폴더명/파일명 변경시 알아서 세팅다시되도록 하는게 있을까?
+
+- python/python3/pip/pip3 설치경로(path) 설정을 어떻게 해야할까?
+
+  > https://dailyheumsi.tistory.com/214
+
+  - usr/bin vs usr/local/bin 두 디렉터리의 차이와 어디다 설치하는게 맞을까?
+
+    > https://wookiist.tistory.com/10
+    >
+    > https://kldp.org/node/42376
+
+  - 환경변수를 어떻게 하냐에 따라 패키지/라이브러리 들이 어디로 저장이 될까?
+
+- 파이썬의 가장 추천되는 가상환경이 멀까? 여러종류의 가상환경의 차이가 멀까?
+
+  > 참고 : https://medium.com/@equus3144/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%98%EA%B3%A0-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%97%88%EC%9D%84%EA%B9%8C-8173992f28e2
+  >
+  > 참고 : https://iissgnoheci.tistory.com/6
+
 
 
 ## 파이썬 코드 스타일 (PEP8)
@@ -332,3 +375,33 @@ PEP8의 내용을 몇가지 소개하면…
 - API
 - DB연동
 - 배포
+
+
+
+## 팁
+
+### 장고 프로젝트 이름 변경시 세팅
+
+> Django 프로젝트를 시작하면 최상위 디렉터리와 프로젝트 이름이 같기 때문에 서로 구분하기 위해서 프로젝트 이름을 변경합니다.
+>
+> 하지만 프로젝트의 이름을 바꾸면 프로젝트 이름으로 된 셋팅된 path들을 모두 변경해주어야 합니다.
+
+- renameproject/manage.py
+
+```
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "renameproject.settings")
+```
+
+- renameproject/settings.py
+
+```
+ROOT_URLCONF = 'renameproject.urls'
+WSGI_APPLICATION = 'renameproject.wsgi.application'
+```
+
+- renameproject/wsgi.py
+
+```
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "renameproject.settings")
+```
+
