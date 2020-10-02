@@ -1,7 +1,7 @@
 from django import forms
-from .models import Blog
+from .models import FuncBlog
 
 class BlogForm(forms.ModelForm):
     class Meta:
-        model = Blog
+        model = FuncBlog
         fields = ['title', 'body']

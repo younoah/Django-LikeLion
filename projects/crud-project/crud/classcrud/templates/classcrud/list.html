@@ -1,0 +1,15 @@
+<h1>CBV model list</h1>
+<br>
+<a href="{% url 'create' %}"> 글 작성하기</a>
+<br><br>
+
+{% comment %} {% for blog in object_list %} {% endcomment %}
+{% for blog in blog_list %} # object_list라는 변수에 알아서 모든 객체들을 담겨 있다.
+    <h2>{{blog.title}}</h2>
+    <h5>{{blog.created_date}}</h5>
+    <p>{{blog.body}}</p>
+    <a href="{% url 'detail' blog.id %}">자세히보기</a>
+    <a href="{% url 'update' blog.id %}">수정</a>
+    <a href="{% url 'delete' blog.id %}">삭제</a>
+    <hr>
+{% endfor %}

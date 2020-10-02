@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
-from .models import Blog
+from .models import FuncBlog
 from .forms import BlogForm
 
 #http메서드 get post put delete
@@ -8,7 +8,7 @@ from .forms import BlogForm
 
 # 불러오기
 def read(req):
-    blogs = Blog.objects.all()
+    blogs = FuncBlog.objects.all()
     return render(req, 'blog.html', {'blogs' : blogs})
 
 # 생성하기
@@ -27,7 +27,7 @@ def create(req):
 
 # 수정하기
 def update(req, pk):
-    blog = get_object_or_404(Blog, pk = pk)
+    blog = get_object_or_404(FuncBlog, pk = pk)
     # 해당하는 블로그 객체 pk에 맞는 입력공간
     form = BlogForm(req.POST, instance=blog) #instance는 곧 객체 pk번쨰를 저장할수 있는 입력공간이다 라는 의미.
     if form.is_valid():
@@ -38,6 +38,6 @@ def update(req, pk):
 
 # 삭제하기
 def delete(req, pk):
-    blog = get_object_or_404(Blog, pk = pk)
+    blog = get_object_or_404(FuncBlog, pk = pk)
     blog.delete()
     return redirect('read')
