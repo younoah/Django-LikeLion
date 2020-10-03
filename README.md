@@ -252,8 +252,16 @@ admin.site.register(Blog)
 
 - 장고/파이썬 refactor, 변수/폴더명/파일명 변경시 알아서 세팅다시되도록 하는게 있을까?
 
+- 맥 터미널에서 유저모드(--user), 관리자권한(sudo)의 개념
+
 - python/python3/pip/pip3 설치경로(path) 설정을 어떻게 해야할까?
 
+  > ![pipPath](./images/pipPath.png)
+  >
+  > ![pipPath2](./images/pipPath2.png)
+  >
+  > 업뎃이 안된다.....(pip라는 명령어는 빨간줄로 뜨면서 아예 사용할수 없는 명령어로 나온다.)
+  >
   > https://dailyheumsi.tistory.com/214
 
   - usr/bin vs usr/local/bin 두 디렉터리의 차이와 어디다 설치하는게 맞을까?
