@@ -134,18 +134,18 @@ INSTALLED_APPS = [
 
 - 장고 프로젝트의 구성
 
-![django_project_content](../images/django_project_content.png)
+![django_project_content](./images/django_project_content.png)
 
 - 장고 프로젝트의 티키타카
 
-![django tikitaka](../images/django_tikitaka.png)
+![django tikitaka](./images/django_tikitaka.png)
 
 ## 명명법
 
 - 장고 명명법 : 소문자 / 공백은 없어야함 / 자주 입력해야 하므로 짧게
 - 명명 규칙 참고 : https://valuefactory.tistory.com/509
 
-![python nomenclature](../images/python_nomenclature.png)
+![python_nomenclature](./images/python_nomenclature.png)
 
 ## views.py
 
@@ -182,4 +182,4 @@ django는 MTV 디자인 패턴을 활용하여 구동한다.
 
 뷰 : 모델과 템플릿 사이에서 중간관리자 역할, 어떻게 처리할지 메서드를 정의
 
-![MTV](../images/MTV.png)
+![MTV](./images/MTV.png)

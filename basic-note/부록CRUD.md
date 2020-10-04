@@ -176,7 +176,7 @@ urlpatterns = [
 
 ### templates
 
-![templates](../images/templates.png)
+![templates](./images/templates.png)
 
 > CBV에 클래스에 따른 default이름으로 html 명을 작성해야한다. 
 >

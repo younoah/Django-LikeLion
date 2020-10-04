@@ -6,15 +6,15 @@
 
 **(index.html)**
 
-![sketch1](../images/sketch1.png)
+![sketch1](./images/sketch1.png)
 
 (**result.html**)
 
-![sketch2](../images/sketch2.png)
+![sketch2](./images/sketch2.png)
 
 (**about.html**)
 
-![sketch3](../images/sketch3.png)
+![sketch3](./images/sketch3.png)
 
 #### 만들어야할 html
 

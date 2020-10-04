@@ -1,0 +1,9 @@
+{% for blog in object_list %}
+    <h2>{{object.title}}</h2>
+    <h5>{{object.created_date}}</h5>
+    <p>{{object.body}}</p>
+    <a href="{% url 'detail' object.id %}">자세히보기</a>
+    <a href="{% url 'update' object.id %}">수정</a>
+    <a href="{% url 'delete' object.id %}">삭제</a>
+    <hr>
+{% endfor %}

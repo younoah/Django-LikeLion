@@ -10,7 +10,7 @@
 
 ## 블로그 글(객체)을 클릭했을 때 해당 객체의 detail.html 띄우기
 
-![detail_design1](../images/detail_design.png)
+![detail_design1](./images/detail_design.png)
 
 
 
@@ -26,7 +26,7 @@
 
 - **PK** : **x번째 블로그 객체**를 요청하면 x번 객체 내용 띄우기
 
-  ![pathConverter](../images/pathConverter.png)
+  ![pathConverter](./images/pathConverter.png)
 
   
 
@@ -64,7 +64,7 @@
 
 ## 글 작성하기 구현 (Create)
 
- ![createLogic](../images/createLogic.png)
+ ![createLogic](./images/createLogic.png)
 
 
 

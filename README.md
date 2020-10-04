@@ -2,6 +2,7 @@
 
 - [나의 설정](#내가-설정한-파이썬/터미널(zsh)/vscode-세팅)
 - [장고 치트시트](#치트시트)
+- [DB연동](#DB연동)
 - [찾아보기](#찾아보기)
 - [파이썬 코드스타일 PEP8](#파이썬-코드-스타일-(PEP8))
 - [패키지 관리](#패키지-목록-버전-관리-(reqirements.txt))
@@ -246,6 +247,18 @@ admin.site.register(Blog)
 
 - base.html 세팅
 
+```python
+
+```
+
+
+
+## DB연동
+
+
+
+
+
 ## 찾아보기
 
 - from import 경로
@@ -263,6 +276,12 @@ admin.site.register(Blog)
   > 업뎃이 안된다.....(pip라는 명령어는 빨간줄로 뜨면서 아예 사용할수 없는 명령어로 나온다.)
   >
   > https://dailyheumsi.tistory.com/214
+  >
+  > ![pipError](./images/pipError.png)
+  >
+  > pip로 httpie 설치시 권한 오류 환경변수때문에 유저권한으로 하라하는듯
+  >
+  > https://beomi.github.io/2018/02/12/Add-packages-installed-with-pip-usermode/
 
   - usr/bin vs usr/local/bin 두 디렉터리의 차이와 어디다 설치하는게 맞을까?
 
