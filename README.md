@@ -2,6 +2,7 @@
 
 - [나의 설정](#내가-설정한-파이썬/터미널(zsh)/vscode-세팅)
 - [장고 치트시트](#치트시트)
+- [장고레스트프레임워크 치트시트](#장고레스트프레임워크-치트시트)
 - [DB연동](#DB연동)
 - [찾아보기](#찾아보기)
 - [파이썬 코드스타일 PEP8](#파이썬-코드-스타일-(PEP8))
@@ -116,6 +117,10 @@ pip uninstall django
 
 ```
 django-admin startproject <장고프로젝트이름>
+
+# 끝에 점을 찍으면 프로젝트 폴더를 따로 생성하지 않는다.
+# 이것을 선호
+django-admin startproject <장고프로젝트이름> .
 ```
 
 - 장고 프로젝트로 이동
@@ -250,6 +255,107 @@ admin.site.register(Blog)
 ```python
 
 ```
+
+
+
+## 장고레스트프레임워크 치트시트
+
+- 장고프로젝트를 담은 디렉터리 생성후 해당 디렉터리를 vscode로 실행
+
+- 가상환경 설정
+
+  ```python
+  #### venv ####
+  python -m venv <가상환경이름>
+  
+  #### virtualenv ####
+  pip install virtualenv
+  
+  virtualenv <가상환경이름>
+  ```
+
+- 가상환경 실행
+
+  ```python
+  # in mac
+  source <가상환경이름>/bin/activate
+  # in window
+  source <가상환경이름>/scripts/activate
+  
+  # 가상환경 종료
+  deactivate
+  ```
+
+- djangorestframework / django 패키지 설치
+
+  ```
+  $ pip install djangorestframework
+  $ pip install django
+  ```
+
+- 장고 프로젝트 생성
+
+```
+django-admin startproject <장고프로젝트이름>
+
+# 끝에 점을 찍으면 프로젝트 폴더를 따로 생성하지 않는다.
+# 이것을 선호
+django-admin startproject <장고프로젝트이름> .
+```
+
+- 장고 프로젝트로 이동
+
+```
+cd <장고프로젝트이름>
+```
+
+- manage.py로 서버 작동
+
+> 장고 프로젝트 생성시 manage.py라는 파일이 있는데
+>
+> 이 파이썬 파일로 서버로 돌린다.
+
+```
+python manage.py runserver
+```
+
+- App 생성하기
+
+```
+python manage.py startapp <앱이름>
+```
+
+- 장고프로젝트에게 app이 생성되었다고 알리기 (settings.py)
+
+> 
+
+```python
+#(settings.py)
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+  	'rest_framework', ## 레스느프레임워크를 installed에 등록
+  	'<앱이름>', ## 그냥 앱이름만 입력해도된다.
+]
+
+```
+
+- 한국시간, 한글로 환경설정
+
+```python
+# (settings.py)
+
+LANGUAGE_CODE = 'ko-kr'
+
+TIME_ZONE = 'asia/seoul'
+```
+
+
 
 
 
