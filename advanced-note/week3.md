@@ -146,3 +146,102 @@ urlpatterns = format_suffix_patterns(urlpatterns)
 
 > APIView에서 list, detail 등의 클래스와 get, put, post 등의 메서드의 재사용성을 위해 상속을 활요하여 좀더 편리하게 사용한다.
 
+
+
+### models.py (위와 동일)
+
+```python
+from django.db import models
+
+class Post(models.Model):
+    objects = models.Manager() #  class has no objects member 에러 예방
+    title = models.CharField(max_length = 50)
+    body = models.TextField()
+```
+
+
+
+### serializers.py (위와 동일)
+
+```python
+from .models import Post
+from rest_framework import serializers
+
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        # fields = ['title', 'body'] 모델의 타이틀과 바디 필드만 채용
+        fields = '__all__' 
+```
+
+
+
+### views.py
+
+```python
+# 데이터 처리 대상 : 모델, Serializer import 시키기
+from post.models import Post
+from post.serializers import PostSerializer
+
+from rest_framework import generics
+from rest_framework import mixins
+
+
+class PostList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+    queryset = Post.objects.all() # 쿼리셋 등록
+    serializer_class = PostSerializer # Serializer 클래스 등록
+
+    # get은 list 메서드를 내보내는 메서드
+    def get(self, req, *args, **kwargs):
+        return self.list(req, *args, **kwargs)
+
+    # post는 create을 내보내는 메서드
+    def post(self, req, *args, **kwargs):
+        return self.create(req, *args, **kwargs)
+
+
+class PostDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, 
+                    mixins.DestroyModelMixin, generics.GenericAPIView):
+    queryset = Post.objects.all() # 쿼리셋 등록
+    serializer_class = PostSerializer # Serializer 클래스 등록
+
+    # DetailView의 get은 retrieve을 내보내는 메서드
+    def get(self, req, *args, **kwargs):
+        return self.retrieve(req, *args, **kwargs)
+
+    # put은 update을 내보내는 메서드
+    def put(self, req, *args, **kwargs):
+        return self.update(req, *args, **kwargs)
+    
+    # delet는 destroy를 내보내는 메서드
+    def delete(self, req, *args, **kwargs):
+        return self.destroy(req, *args, **kwargs)
+```
+
+
+
+### urls.py (위와 동일)
+
+```python
+from django.urls import path
+from rest_framework.urlpatterns import format_suffix_patterns
+from post import views
+
+# Default Router 사용안함 => APi ROOT 없음.
+
+# router = DefaultRouter()
+# router.register('post', views.PostVeiwSet)
+
+urlpatterns = [
+    # 127.0.0.1:8000/post == ListView
+    path('post/', views.PostList.as_view()),
+    # 127.0.0.1:8000/post == DetailView
+    path('post/<int:pk>/', views.PostDetail.as_view()),
+]
+
+#
+urlpatterns = format_suffix_patterns(urlpatterns)
+```
+
+
+
