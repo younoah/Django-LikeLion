@@ -28,4 +28,3 @@ class PostViewSet(viewsets.ModelViewSet):
     # 그냥 얍을 띄우는 custom api
     def highlight(self, req, *args, **kwargs):
         return HttpResponse("얍")
-
