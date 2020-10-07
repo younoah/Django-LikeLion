@@ -538,3 +538,7 @@ WSGI_APPLICATION = 'renameproject.wsgi.application'
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "renameproject.settings")
 ```
 
+
+
+### gitignore
+
