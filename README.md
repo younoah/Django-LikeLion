@@ -542,3 +542,16 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "renameproject.settings")
 
 ### gitignore
 
+https://www.toptal.com/developers/gitignore
+
+![gitignore](./images/gitignore.png)
+
+![gitignore2](./images/gitignore2.png)
+
+> 가상환경이름을 추가 작성하여 git에 올리지 않는다.
+
+
+
+### 장고 마이그레이션 삭제
+
+> 참고 : https://wikidocs.net/9926

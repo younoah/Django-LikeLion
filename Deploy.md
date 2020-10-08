@@ -2,12 +2,20 @@
 
 - 웹, 앱과 서비스를 배포, 관리 및 증감을 손쉽게 할 수 있도록 하는 서비스
 
-> aws 액세스 키 참고 : http://wildpup.cafe24.com/archives/929
+### 시작하기전에 주의사항!
+
+> aws는 과금을 주의해야한다. 따라서 연습을 하고 난뒤에 꼭 마지막에
+>
+> `eb terminate --all` 명령어를 처서 aws 어플리케이션을 해제해야한다.
+
+---
+
+> aws 액세스 키 참고 : http://wildpup.cafe24.com/archives/929 (이걸 우선으로!)
 >
 > https://www.44bits.io/ko/post/publishing_and_managing_aws_user_access_key
 >
 > https://jybaek.tistory.com/838
->
+
 > aws eb 사용할때 알아둘점
 >
 > https://devlog.jwgo.kr/2018/02/22/things-about-elasticbeanstalk/
