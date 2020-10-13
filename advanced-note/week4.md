@@ -11,7 +11,7 @@
 - DRF 제공 클래스
 
 1. **PageNumberPagination**
-2. LimiOffsetPagination
+2. LimitOffsetPagination
 3. cursorPagination
 4. **customizedPagination**
 
@@ -351,7 +351,7 @@ class UserPostViewSet(viewsets.ModelViewSet):
 
 > BasicAuthentication와 더불어 장고의 디폴트 인증방식
 >
-> 로그인이 될 때마다 저장되는 Session 정보르르 참조하여 인증하는 방식
+> 로그인이 될 때마다 저장되는 Session 정보를 참조하여 인증하는 방식
 >
 > 외부서비스에서는 사용이 불가하다.
 
@@ -578,7 +578,7 @@ class UserPostViewSet(viewsets.ModelViewSet):
 - **AllowAny** (default) : 인증된 요청이든 비인증 요청이든 전부 허용하겠다.
 - **IsAuthenticated** : 인증된 요청에 대해서만 View 호출을 허용하겠다. (등록된 사용자에게만 Access 허용)
 - **IsAdminUser** : Staff User에 대해서만 요청을 허용하겠다.(`User.is_stff == True` 일 때만 허용)
-- **IsAuthenticatedOrReadOnly** : 인증된 요청은 모든 권한을 허용하지만 비인증 요청에 대해서는 읽기만 허용하겠다. (비인증요청은 '안전한 http method'만 허용하겠다.) (안정한 http method : GET, HEAD, OPTION)
+- **IsAuthenticatedOrReadOnly** : 인증된 요청은 모든 권한을 허용하지만 비인증 요청에 대해서는 읽기만 허용하겠다. (비인증요청은 '안전한 http method'만 허용하겠다.) (안전한 http method : GET, HEAD, OPTION)
 
 
 
@@ -587,7 +587,7 @@ class UserPostViewSet(viewsets.ModelViewSet):
 ### 장고 레스트프레임 워크 서버 클라이언트 화면에 로그인창 구현
 
 ```python
-# settings.py
+# urls.py
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import urls # api 서버 html 내부에 로그인 구현하기위함.

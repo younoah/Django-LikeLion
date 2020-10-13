@@ -444,6 +444,10 @@ PEP8의 내용을 몇가지 소개하면…
 
   ```
   $ pip install -r requirements.txt
+  
+  $ pip install requirements.txt
+  
+  # 둘의 차이는 아직 모르겠다...ㅠ
   ```
 
   > 이 명령어로 설치가 안되는 패키지들이 있을수 있다.
@@ -555,3 +559,44 @@ https://www.toptal.com/developers/gitignore
 ### 장고 마이그레이션 삭제
 
 > 참고 : https://wikidocs.net/9926
+
+추가로
+
++ ```py
+  pip3 uninstall Django
+  pip3 install Django
+  ```
+
+### 실행(runserver)
+
+- runserver 명령어를 실행하면 기본적으로 내부 IP의 8000번 포트로 개발 서버를 띄움
+
+  ```
+  $ python manage.py runserver
+  ```
+
+- 포트 번호 바꿔서 실행하기
+
+  ```
+  $ python manage.py runserver 8080
+  ```
+
+- 서버 IP 바꾸기 (외부접속 허용)
+
+  ```
+  $ python manage.py runserver 0:8000
+  
+  # 또는
+  $ python manage.py runserver 0.0.0.0:8000
+  ```
+
+  - 같은 네트워크를 공유하고 있는 다른 컴퓨터(스마트폰)에서 접속하고 싶을 때 IP주소를 `0:` 으로 해주고, 
+
+  - settings.py에서 아래와 같이 코드를 수정해wnaus ehlsek.
+
+    ```python
+    ALLOWED_HOST=['*']
+    ```
+
+  - 웹 서버를 실행시킨 컴퓨터의 IPv4 address와 포트번호를 통해서 접속할수 있다.
+  - 예) 127.33.1.41:8000

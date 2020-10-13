@@ -38,7 +38,7 @@ example = {
 ### Serialization (직렬화)
 
 - JSON은 그냥 보내면 안된다. 모든 클라이언트들이 JSON을 모를수 있기 때문이다.
-- 따라서 문자열로 직 렬화 하여 보내주어야한다.
+- 따라서 문자열로 직렬화 하여 보내주어야한다.
 
 ![serialization](./images/serialization.png)
 

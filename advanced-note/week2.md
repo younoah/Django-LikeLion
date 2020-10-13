@@ -69,9 +69,33 @@ Application Program Interface
 
 > 장고에서 Form과 ModelForm이 있듯이 장고 레스트 프레임워크에서 Serialier와 ModelSerializer가 있다.
 >
-> 이것들은 모델로부터 필드들을 읽어오고 유효성검사를 한다. 차이점은 htmlForm을 생성 하냐 JSON 데이터를 생성하냐의 차이이다.
+> 이것들은 모델로부터 필드들을 읽어오거나 필드를 만들어주고 유효성검사(`is_valid()`)를 한다. 차이점은 htmlForm을 생성 하냐 JSON 데이터를 생성하냐의 차이이다.
+
+
+
+![djangoSource](./images/djangoSource.png)
+
+> 장고에서 서버와 클라이언트 사이에서는 HTML, CSS, JS 파이들이 교환된다.
+
+
+
+![djangoRestFrameWorkSource](./images/djangoRestFrameWorkSource.png)
+
+> 장고레스트프렘임워크에서 서버와 클라이언트 사이에서는 "**JSON문자열**" 이 교환된다.
+>
+> 주의! JSON 파일이 아닌 JSON 문자열이다!
+
+
 
 ![djangoRest2](./images/djangoRest2.png)
+
+> 만일 클라이언트가 API서버에게 Requst를 GET으로 요청하면 API서버는 단순하게 해당 데이터를 갖다주면 된다.
+>
+> 하지만 Request의 종류가 "**이 데이터**를 처리해줘에"  POST요청일때 "**이 데이터**"는 serializer를 통해 JSON문자열로 바꾸어 받아들이고 처리한다. 즉, 클라이언트는 JSON을 입력하고 장고레스트프레임워크에서 serializer문자열화를 통해 JSON문자열로 바꾸고 데이터를 처리해준다.(처리하고 결과를 알려준다.)
+>
+> - 서버에서는 문자열화 된 JSON 즉, JSON문자열로 데이터를 처리하고 클라이언트는 JSON형태로 보내거나 받는다.
+>
+> (장고에서는 "**이 데이터"**를 form에 담아와서 처린하는 방식이다.)
 
 
 
@@ -202,4 +226,3 @@ urlpatterns = [
 ]
 ```
 
-> 

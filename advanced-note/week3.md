@@ -29,7 +29,7 @@
 >
 > 단점으로 왠만한 모델은 리스트, 디테일,  get, post, put, delete 동작이 똑같이 필요한데 매번 일일히 정의하는게 불편하다.
 >
-> - APIView, Http404, Response, status를 임포트한다.
+> - `APIView`, `Http404`, `Response`, `status`를 임포트한다.
 
 
 
@@ -148,7 +148,7 @@ urlpatterns = format_suffix_patterns(urlpatterns)
 
 > APIView에서 list, detail 등의 클래스와 get, put, post 등의 메서드의 재사용성을 위해 상속을 활요하여 좀더 편리하게 사용한다.
 >
-> - generics, mixins 를 import한다.
+> - `generics`, `mixins` 를 import한다.
 
 
 
